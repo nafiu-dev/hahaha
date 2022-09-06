@@ -7,12 +7,33 @@ function Post(props) {
 	return (
 		<View style={styles.outerContainer}>
 			<View style={styles.innerContainer}>
-				<View style={styles.profile}></View>
+				<View style={styles.profile}>
+					<View style={styles.profilePic}></View>
+					<View style={styles.profileInfo}>
+						<Text style={styles.profileName}>Steve Johnson</Text>
+						<Text styke={styles.postTime}>30 Sec ago</Text>
+					</View>
+				</View>
 				<View style={styles.image}></View>
 				<View style={styles.reacts}>
-					<FontAwesome name="heart" size={32} color={Colors.grey} />
-					<FontAwesome name="comment" size={32} color={Colors.grey} />
-					<FontAwesome name="send" size={32} color={Colors.grey} />
+					<FontAwesome
+						name="heart"
+						size={32}
+						color={Colors.red}
+						style={styles.reactLike}
+					/>
+					<FontAwesome
+						name="comment"
+						size={32}
+						color={Colors.grey}
+						style={styles.reactComment}
+					/>
+					<FontAwesome
+						name="send"
+						size={32}
+						color={Colors.grey}
+						style={styles.reactSend}
+					/>
 					<FontAwesome
 						name="save"
 						size={32}
@@ -43,7 +64,28 @@ const styles = StyleSheet.create({
 		width: 300,
 		borderRadius: 30,
 		alignItems: "center",
-		justifyContent: "center",
+	},
+	profile: {
+		flexDirection: "row",
+		width: "80%",
+		paddingTop: 25,
+		paddingBottom: 25,
+	},
+	profilePic: {
+		backgroundColor: Colors.grey,
+		height: 50,
+		width: 50,
+		borderRadius: 15,
+	},
+	profileInfo: {
+		paddingLeft: 20,
+	},
+	profileName: {
+		fontWeight: "bold",
+		paddingTop: 5,
+	},
+	postTime: {
+		paddingTop: 10,
 	},
 	image: {
 		height: 250,
@@ -54,11 +96,19 @@ const styles = StyleSheet.create({
 	reacts: {
 		flexDirection: "row",
 		paddingLeft: 25,
+		paddingTop: 25,
 		width: "100%",
 		alignItems: "flex-start",
 	},
+	reactLike: {},
+	reactComment: {
+		paddingLeft: 15,
+	},
+	reactSend: {
+		paddingLeft: 15,
+	},
 	reactSave: {
-		paddingLeft: 125,
+		paddingLeft: 95,
 	},
 	info: {
 		width: "100%",
