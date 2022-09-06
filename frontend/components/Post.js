@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
 		borderRadius: 30,
 		alignItems: "center",
 		justifyContent: "center",
+		margin: 10,
 	},
 	innerContainer: {
 		backgroundColor: Colors.white,

@@ -2,14 +2,22 @@ import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Colors from "../libraries/Colors";
+import Header from "../components/Header";
+import Story from "../components/Story";
 import Post from "../components/Post";
 
 function HomeScreen(props) {
 	return (
 		<View style={styles.container}>
+			<Header />
 			<View style={styles.content}>
 				<ScrollView style={styles.stories}></ScrollView>
 				<ScrollView style={styles.posts}>
+					<Post />
+					<Post />
+					<Post />
+					<Post />
+					<Post />
 					<Post />
 				</ScrollView>
 			</View>
@@ -27,6 +35,7 @@ function HomeScreen(props) {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		paddingTop: 40,
 		alignItems: "center",
 		justifyContent: "center",
 		backgroundColor: Colors.white,
@@ -34,6 +43,8 @@ const styles = StyleSheet.create({
 	content: {
 		flex: 1,
 	},
+	stories: {},
+	posts: {},
 	nav: {
 		flexDirection: "row",
 		height: 70,
