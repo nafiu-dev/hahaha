@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
+import WelcomeScreen from "./screens/WelcomeScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 
@@ -10,6 +11,11 @@ export default function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="WelcomeScreen"
+					component={WelcomeScreen}
+				/>
 				<Stack.Screen
 					options={{ headerShown: false }}
 					name="ProfileScreen"
