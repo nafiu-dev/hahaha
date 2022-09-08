@@ -13,11 +13,6 @@ export default function App() {
 			<Stack.Navigator>
 				<Stack.Screen
 					options={{ headerShown: false }}
-					name="WelcomeScreen"
-					component={WelcomeScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
 					name="ProfileScreen"
 					component={ProfileScreen}
 				/>
