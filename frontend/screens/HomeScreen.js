@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Colors from "../libraries/Colors";
 import Header from "../components/Header";
 import Story from "../components/Story";
