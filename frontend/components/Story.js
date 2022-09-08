@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
+import Colors from "../libraries/Colors";
 
 function Story(props) {
 	return <View style={styles.container}></View>;
@@ -7,9 +8,11 @@ function Story(props) {
 
 const styles = StyleSheet.create({
 	container: {
-		height: 50,
-		width: 50,
+		height: 60,
+		width: 60,
 		borderRadius: 15,
+		backgroundColor: Colors.black,
+		marginLeft: 25,
 	},
 });
 

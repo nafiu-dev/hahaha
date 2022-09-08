@@ -11,14 +11,30 @@ function HomeScreen(props) {
 		<View style={styles.container}>
 			<Header />
 			<View style={styles.content}>
-				<ScrollView style={styles.stories}></ScrollView>
-				<ScrollView style={styles.posts}>
-					<Post />
-					<Post />
-					<Post />
-					<Post />
-					<Post />
-					<Post />
+				<ScrollView
+					horizontal={true}
+					showsHorizontalScrollIndicator={false}
+					style={styles.stories}>
+					<Story />
+					<Story />
+					<Story />
+					<Story />
+					<Story />
+					<Story />
+					<Story />
+					<Story />
+					<Story />
+					<Story />
+				</ScrollView>
+				<ScrollView showsVerticalScrollIndicator={false}>
+					<View style={styles.posts}>
+						<Post />
+						<Post />
+						<Post />
+						<Post />
+						<Post />
+						<Post />
+					</View>
 				</ScrollView>
 			</View>
 			<View style={styles.nav}>
@@ -43,8 +59,12 @@ const styles = StyleSheet.create({
 	content: {
 		flex: 1,
 	},
-	stories: {},
-	posts: {},
+	stories: {
+		height: 80,
+	},
+	posts: {
+		alignItems: "center",
+	},
 	nav: {
 		flexDirection: "row",
 		height: 70,

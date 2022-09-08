@@ -7,7 +7,20 @@ function Header(props) {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.name}>Piqobe</Text>
-			<FontAwesome name="gear" size={24} color={Colors.black} />
+			<View style={styles.headerButtons}>
+				<FontAwesome
+					name="gear"
+					size={24}
+					color={Colors.black}
+					style={styles.settings}
+				/>
+				<FontAwesome
+					name="bell"
+					size={24}
+					color={Colors.black}
+					style={styles.notifications}
+				/>
+			</View>
 		</View>
 	);
 }
@@ -15,13 +28,21 @@ function Header(props) {
 const styles = StyleSheet.create({
 	container: {
 		height: 70,
-		flexDirection: "row",
-		width: "80%",
+		width: "85%",
 		justifyContent: "center",
 	},
 	name: {
 		fontWeight: "bold",
 		fontSize: 32,
+		alignSelf: "flex-start",
+	},
+	headerButtons: {
+		flexDirection: "row",
+		alignSelf: "flex-end",
+		marginTop: -30,
+	},
+	settings: {
+		paddingRight: 20,
 	},
 });
 
