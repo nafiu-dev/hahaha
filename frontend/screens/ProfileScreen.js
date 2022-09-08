@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import Colors from "../libraries/Colors";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Navigation from "../components/Navigation";
 
 function ProfileScreen(props) {
 	return (
@@ -63,6 +64,7 @@ function ProfileScreen(props) {
 					<View style={styles.post} />
 				</View>
 			</ScrollView>
+			<Navigation />
 		</View>
 	);
 }

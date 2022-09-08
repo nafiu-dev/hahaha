@@ -5,6 +5,7 @@ import Colors from "../libraries/Colors";
 import Header from "../components/Header";
 import Story from "../components/Story";
 import Post from "../components/Post";
+import Navigation from "../components/Navigation";
 
 function HomeScreen(props) {
 	return (
@@ -37,13 +38,7 @@ function HomeScreen(props) {
 					</View>
 				</ScrollView>
 			</View>
-			<View style={styles.nav}>
-				<FontAwesome name="home" size={30} color={Colors.orange} />
-				<FontAwesome name="comment" size={30} color={Colors.dark_grey} />
-				<FontAwesome name="plus" size={30} color={Colors.dark_grey} />
-				<FontAwesome name="search" size={30} color={Colors.dark_grey} />
-				<FontAwesome name="user" size={30} color={Colors.dark_grey} />
-			</View>
+			<Navigation />
 		</View>
 	);
 }
@@ -64,19 +59,6 @@ const styles = StyleSheet.create({
 	},
 	posts: {
 		alignItems: "center",
-	},
-	nav: {
-		flexDirection: "row",
-		height: 70,
-		width: "100%",
-		backgroundColor: Colors.white,
-		borderRadius: 10,
-		alignItems: "center",
-		justifyContent: "space-around",
-		shadowColor: Colors.black,
-		shadowOffset: -5,
-		shadowRadius: 20,
-		elevation: 10,
 	},
 });
 
