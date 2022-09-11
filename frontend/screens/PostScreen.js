@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, TextInput } from "react-native";
+import { View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import Navigation from "../components/Navigation";
 import UploadImage from "../components/UploadImage";
 import Colors from "../libraries/Colors";

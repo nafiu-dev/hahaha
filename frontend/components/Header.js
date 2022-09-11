@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import Colors from "../libraries/Colors";
 
 function Header(props) {
@@ -8,14 +8,14 @@ function Header(props) {
 		<View style={styles.container}>
 			<Text style={styles.name}>Piqobe</Text>
 			<View style={styles.headerButtons}>
-				<FontAwesome
-					name="gear"
+				<AntDesign
+					name="setting"
 					size={24}
 					color={Colors.black}
 					style={styles.settings}
 				/>
-				<FontAwesome
-					name="bell"
+				<AntDesign
+					name="bells"
 					size={24}
 					color={Colors.black}
 					style={styles.notifications}

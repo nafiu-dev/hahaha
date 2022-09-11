@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import Colors from "../libraries/Colors";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import Navigation from "../components/Navigation";
 
 function ExploreScreen(props) {
@@ -10,7 +10,7 @@ function ExploreScreen(props) {
 			<View style={styles.searchBar}>
 				<TextInput style={styles.searchText}></TextInput>
 				<TouchableOpacity style={styles.searchButton}>
-					<FontAwesome name="search" size={26} color={Colors.white} />
+					<AntDesign name="search1" size={26} color={Colors.white} />
 				</TouchableOpacity>
 			</View>
 			<View style={styles.searchResults}></View>

@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import Colors from "../libraries/Colors";
 import { useNavigation } from "@react-navigation/native";
 
@@ -10,19 +11,19 @@ function Navigation(props) {
 	return (
 		<View style={styles.container}>
 			<TouchableOpacity onPress={() => navigation.replace("HomeScreen")}>
-				<FontAwesome name="home" size={30} color={Colors.dark_grey} />
+				<AntDesign name="home" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => navigation.replace("MessageScreen")}>
-				<FontAwesome name="comment" size={30} color={Colors.dark_grey} />
+				<AntDesign name="message1" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => navigation.replace("PostScreen")}>
-				<FontAwesome name="plus" size={30} color={Colors.dark_grey} />
+				<AntDesign name="plussquareo" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => navigation.replace("ExploreScreen")}>
-				<FontAwesome name="search" size={30} color={Colors.dark_grey} />
+				<AntDesign name="search1" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => navigation.replace("ProfileScreen")}>
-				<FontAwesome name="user" size={30} color={Colors.dark_grey} />
+				<AntDesign name="profile" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
 		</View>
 	);

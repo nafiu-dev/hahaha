@@ -1,12 +1,17 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Colors from "../libraries/Colors";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { useNavigation } from "@react-navigation/native";
 
 function Post(props) {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.outerContainer}>
-			<View style={styles.innerContainer}>
+			<TouchableOpacity
+				onPress={() => navigation.replace("PostViewScreen")}
+				style={styles.innerContainer}>
 				<View style={styles.profile}>
 					<View style={styles.profilePic}></View>
 					<View style={styles.profileInfo}>
@@ -16,25 +21,25 @@ function Post(props) {
 				</View>
 				<View style={styles.image}></View>
 				<View style={styles.reacts}>
-					<FontAwesome
+					<AntDesign
 						name="heart"
 						size={32}
 						color={Colors.red}
 						style={styles.reactLike}
 					/>
-					<FontAwesome
-						name="comment"
+					<AntDesign
+						name="message1"
 						size={32}
 						color={Colors.grey}
 						style={styles.reactComment}
 					/>
-					<FontAwesome
-						name="send"
+					<AntDesign
+						name="arrowright"
 						size={32}
 						color={Colors.grey}
 						style={styles.reactSend}
 					/>
-					<FontAwesome
+					<AntDesign
 						name="save"
 						size={32}
 						color={Colors.grey}
@@ -44,7 +49,7 @@ function Post(props) {
 				<View style={styles.info}>
 					<Text style={styles.infoText}>4,566,500 Liked By Afshint2y</Text>
 				</View>
-			</View>
+			</TouchableOpacity>
 		</View>
 	);
 }

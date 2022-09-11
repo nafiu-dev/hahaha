@@ -8,7 +8,7 @@ import {
 	ScrollView,
 } from "react-native";
 import Colors from "../libraries/Colors";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 import Message from "../components/Message";
 
@@ -19,9 +19,9 @@ function MessageViewScreen(props) {
 		<View style={styles.container}>
 			<View style={styles.header}>
 				<TouchableOpacity onPress={() => navigation.replace("MessageScreen")}>
-					<FontAwesome
-						name="arrow-left"
-						size={20}
+					<AntDesign
+						name="back"
+						size={24}
 						color={Colors.white}
 						style={styles.arrow}
 					/>
