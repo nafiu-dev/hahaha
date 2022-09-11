@@ -21,4 +21,4 @@ expo start
 open up the expo go app on your phone and scan the qr code.
 
 
-*Your phone needs to be on the same network as the device you are running expo*
+*Your phone needs to be on the same network as the device you are running the expo server*
