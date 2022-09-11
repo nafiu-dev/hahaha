@@ -17,6 +17,16 @@ export default function App() {
 					name="HomeScreen"
 					component={HomeScreen}
 				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="ProfileScreen"
+					component={ProfileScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="ExploreScreen"
+					component={ExploreScreen}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

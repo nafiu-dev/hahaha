@@ -1,16 +1,29 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Colors from "../libraries/Colors";
+import { useNavigation } from "@react-navigation/native";
 
 function Navigation(props) {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.container}>
-			<FontAwesome name="home" size={30} color={Colors.dark_grey} />
-			<FontAwesome name="comment" size={30} color={Colors.dark_grey} />
-			<FontAwesome name="plus" size={30} color={Colors.dark_grey} />
-			<FontAwesome name="search" size={30} color={Colors.dark_grey} />
-			<FontAwesome name="user" size={30} color={Colors.dark_grey} />
+			<TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+				<FontAwesome name="home" size={30} color={Colors.dark_grey} />
+			</TouchableOpacity>
+			<TouchableOpacity>
+				<FontAwesome name="comment" size={30} color={Colors.dark_grey} />
+			</TouchableOpacity>
+			<TouchableOpacity>
+				<FontAwesome name="plus" size={30} color={Colors.dark_grey} />
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => navigation.navigate("ExploreScreen")}>
+				<FontAwesome name="search" size={30} color={Colors.dark_grey} />
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")}>
+				<FontAwesome name="user" size={30} color={Colors.dark_grey} />
+			</TouchableOpacity>
 		</View>
 	);
 }
