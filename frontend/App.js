@@ -11,13 +11,14 @@ import ExploreScreen from "./screens/ExploreScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import MessageViewScreen from "./screens/MessageViewScreen";
 import PostViewScreen from "./screens/PostViewScreen";
+import SettingsScreen from "./screens/SettingsScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator>
+			<Stack.Navigator screenOptions={{ animation: "none" }}>
 				<Stack.Screen
 					options={{ headerShown: false }}
 					name="WelcomeScreen"
@@ -67,6 +68,11 @@ export default function App() {
 					options={{ headerShown: false }}
 					name="PostViewScreen"
 					component={PostViewScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="SettingsScreen"
+					component={SettingsScreen}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

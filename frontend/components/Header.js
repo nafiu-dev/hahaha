@@ -1,19 +1,24 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Colors from "../libraries/Colors";
+import { useNavigation } from "@react-navigation/native";
 
 function Header(props) {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.container}>
 			<Text style={styles.name}>Piqobe</Text>
 			<View style={styles.headerButtons}>
-				<AntDesign
-					name="setting"
-					size={24}
-					color={Colors.black}
-					style={styles.settings}
-				/>
+				<TouchableOpacity onPress={() => navigation.replace("SettingsScreen")}>
+					<AntDesign
+						name="setting"
+						size={24}
+						color={Colors.black}
+						style={styles.settings}
+					/>
+				</TouchableOpacity>
 				<AntDesign
 					name="bells"
 					size={24}

@@ -7,7 +7,7 @@ import {
 	ScrollView,
 } from "react-native";
 import Colors from "../libraries/Colors";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import Navigation from "../components/Navigation";
 
 function ProfileScreen(props) {
@@ -36,18 +36,7 @@ function ProfileScreen(props) {
 					<Text style={styles.followButtonText}>Follow</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.sendMessage}>
-					<FontAwesome name="envelope" size={20} color={Colors.black} />
-				</TouchableOpacity>
-			</View>
-			<View style={styles.postSelector}>
-				<TouchableOpacity style={styles.postSelectorButton}>
-					<Text style={styles.postSelectorButtonText}>Photos</Text>
-				</TouchableOpacity>
-				<TouchableOpacity style={styles.postSelectorButton}>
-					<Text style={styles.postSelectorButtonText}>Video</Text>
-				</TouchableOpacity>
-				<TouchableOpacity style={styles.postSelectorButton}>
-					<Text style={styles.postSelectorButtonText}>Tagged</Text>
+					<AntDesign name="message1" size={20} color={Colors.black} />
 				</TouchableOpacity>
 			</View>
 			<ScrollView showsVerticalScrollIndicator={false}>
@@ -109,6 +98,7 @@ const styles = StyleSheet.create({
 	followButtons: {
 		flexDirection: "row",
 		marginTop: 20,
+		marginBottom: 20,
 	},
 	followButton: {
 		backgroundColor: Colors.orange,
@@ -129,17 +119,6 @@ const styles = StyleSheet.create({
 		width: 50,
 		borderRadius: 10,
 		backgroundColor: Colors.grey,
-	},
-	postSelector: {
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-around",
-		backgroundColor: Colors.grey,
-		height: 50,
-		width: "80%",
-		borderRadius: 10,
-		marginTop: 20,
-		marginBottom: 20,
 	},
 	posts: {
 		flexDirection: "row",
