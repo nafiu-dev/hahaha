@@ -9,6 +9,7 @@ import MessageScreen from "./screens/MessageScreen";
 import PostScreen from "./screens/PostScreen";
 import ExploreScreen from "./screens/ExploreScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import MessageViewScreen from "./screens/MessageViewScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +56,11 @@ export default function App() {
 					options={{ headerShown: false }}
 					name="ExploreScreen"
 					component={ExploreScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="MessageViewScreen"
+					component={MessageViewScreen}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

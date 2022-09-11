@@ -1,10 +1,14 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 import Colors from "../libraries/Colors";
+import { useNavigation } from "@react-navigation/native";
 
 function MessagePerson(props) {
+	const navigation = useNavigation();
 	return (
-		<TouchableOpacity style={styles.container}>
+		<TouchableOpacity
+			onPress={() => navigation.replace("MessageViewScreen")}
+			style={styles.container}>
 			<Text style={styles.person}>Person Personson</Text>
 			<Text style={styles.lastMessage}>Last text reieved</Text>
 		</TouchableOpacity>
