@@ -1,8 +1,11 @@
 import React from "react";
 import { Button, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import Colors from "../libraries/Colors";
+import { useNavigation } from "@react-navigation/native";
 
 function WelcomeScreen(props) {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.top}>
@@ -12,10 +15,14 @@ function WelcomeScreen(props) {
 				</Text>
 			</View>
 			<View style={styles.bottom}>
-				<TouchableOpacity style={styles.login}>
+				<TouchableOpacity
+					onPress={() => navigation.replace("LoginScreen")}
+					style={styles.login}>
 					<Text style={styles.loginText}>Log in</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.signup}>
+				<TouchableOpacity
+					onPress={() => navigation.replace("SignupScreen")}
+					style={styles.signup}>
 					<Text style={styles.signupText}>Sign up</Text>
 				</TouchableOpacity>
 			</View>

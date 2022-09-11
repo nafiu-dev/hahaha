@@ -2,7 +2,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import WelcomeScreen from "./screens/WelcomeScreen";
+import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
 import HomeScreen from "./screens/HomeScreen";
+import MessageScreen from "./screens/MessageScreen";
+import PostScreen from "./screens/PostScreen";
 import ExploreScreen from "./screens/ExploreScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 
@@ -14,8 +18,33 @@ export default function App() {
 			<Stack.Navigator>
 				<Stack.Screen
 					options={{ headerShown: false }}
+					name="WelcomeScreen"
+					component={WelcomeScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="LoginScreen"
+					component={LoginScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="SignupScreen"
+					component={SignupScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
 					name="HomeScreen"
 					component={HomeScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="MessageScreen"
+					component={MessageScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="PostScreen"
+					component={PostScreen}
 				/>
 				<Stack.Screen
 					options={{ headerShown: false }}

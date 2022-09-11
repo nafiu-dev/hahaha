@@ -9,19 +9,19 @@ function Navigation(props) {
 
 	return (
 		<View style={styles.container}>
-			<TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+			<TouchableOpacity onPress={() => navigation.replace("HomeScreen")}>
 				<FontAwesome name="home" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
-			<TouchableOpacity>
+			<TouchableOpacity onPress={() => navigation.replace("MessageScreen")}>
 				<FontAwesome name="comment" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
-			<TouchableOpacity>
+			<TouchableOpacity onPress={() => navigation.replace("PostScreen")}>
 				<FontAwesome name="plus" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
-			<TouchableOpacity onPress={() => navigation.navigate("ExploreScreen")}>
+			<TouchableOpacity onPress={() => navigation.replace("ExploreScreen")}>
 				<FontAwesome name="search" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
-			<TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")}>
+			<TouchableOpacity onPress={() => navigation.replace("ProfileScreen")}>
 				<FontAwesome name="user" size={30} color={Colors.dark_grey} />
 			</TouchableOpacity>
 		</View>
