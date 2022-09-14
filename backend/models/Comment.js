@@ -7,13 +7,9 @@ let CommentSchema = new mongoose.Schema({
         required: true
     },
     UserId: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'user',
-        // required: true
-        
-        type: String,
-        default: "no id for now"
-
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user',
+        required: true
     },
     comment: {
         type: String,

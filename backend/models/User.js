@@ -4,7 +4,10 @@ let UserSchema = new mongoose.Schema({
     username:{
         type: String,
         required: true,
-        unique: true,
+        // unique: true,
+        index:true,
+        // unique:true,
+        // sparse:true
     },
     email: {
         type: String,
@@ -24,11 +27,24 @@ let UserSchema = new mongoose.Schema({
     following: {
         type: Array
     },
+    followers: {
+        type: Array
+    },
     created_at:{
         type: Date,
         default: Date.now
     }
+}, {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
 })
 
+
+UserSchema.virtual('posts', {
+    ref: 'post',
+    localField: '_id',
+    foreignField: 'UserId',
+    justOne: false
+})
 
 module.exports = mongoose.model('user', UserSchema)

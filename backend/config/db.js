@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const URI = process.env.URI
+const URI = process.env.URII
 
 mongoose.connect(URI).then(() => {
     console.log(`DATABASE CONNECTED `)
