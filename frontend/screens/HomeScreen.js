@@ -30,18 +30,18 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		paddingTop: 40,
+		width: "100%",
 		alignItems: "center",
 		justifyContent: "center",
 		backgroundColor: Colors.white,
 	},
 	content: {
 		flex: 1,
-	},
-	stories: {
-		height: 80,
+		width: "100%",
 	},
 	posts: {
 		alignItems: "center",
+		width: "100%",
 	},
 });
 

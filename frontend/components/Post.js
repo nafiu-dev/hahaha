@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Colors from "../libraries/Colors";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 
+const test_post = {
+	UserName: "no id for now",
+	post_image: require("../assets/icon.png"),
+	title: "Test title",
+	likes: 123456,
+	liked: false,
+	created_at: "30 sec ago",
+};
+
 function Post(props) {
 	const navigation = useNavigation();
+	const [liked, setAsLiked] = useState(Colors.red);
+
+	function like() {
+		test_post.liked = !test_post.liked;
+		test_post.liked ? setAsLiked(Colors.red) : setAsLiked(Colors.grey);
+	}
 
 	return (
 		<View style={styles.outerContainer}>
@@ -15,39 +30,41 @@ function Post(props) {
 				<View style={styles.profile}>
 					<View style={styles.profilePic}></View>
 					<View style={styles.profileInfo}>
-						<Text style={styles.profileName}>Steve Johnson</Text>
-						<Text styke={styles.postTime}>30 Sec ago</Text>
+						<Text style={styles.profileName}>{test_post.UserName}</Text>
+						<Text styke={styles.postTime}>{test_post.created_at}</Text>
 					</View>
 				</View>
+				<Text style={styles.postTitle}>{test_post.title}</Text>
 				<View style={styles.image}></View>
 				<View style={styles.reacts}>
-					<AntDesign
-						name="heart"
-						size={32}
-						color={Colors.red}
-						style={styles.reactLike}
-					/>
-					<AntDesign
-						name="message1"
-						size={32}
-						color={Colors.grey}
-						style={styles.reactComment}
-					/>
-					<AntDesign
-						name="arrowright"
-						size={32}
-						color={Colors.grey}
-						style={styles.reactSend}
-					/>
-					<AntDesign
-						name="save"
-						size={32}
-						color={Colors.grey}
-						style={styles.reactSave}
-					/>
+					<TouchableOpacity onPress={like}>
+						<AntDesign
+							name="heart"
+							size={32}
+							color={liked}
+							style={styles.reactLike}
+						/>
+					</TouchableOpacity>
+					<TouchableOpacity
+						onPress={() => navigation.replace("PostViewScreen")}>
+						<AntDesign
+							name="message1"
+							size={32}
+							color={Colors.grey}
+							style={styles.reactComment}
+						/>
+					</TouchableOpacity>
+					<TouchableOpacity>
+						<AntDesign
+							name="arrowright"
+							size={32}
+							color={Colors.grey}
+							style={styles.reactSend}
+						/>
+					</TouchableOpacity>
 				</View>
 				<View style={styles.info}>
-					<Text style={styles.infoText}>4,566,500 Liked By Afshint2y</Text>
+					<Text style={styles.infoText}>{test_post.likes} Likes</Text>
 				</View>
 			</TouchableOpacity>
 		</View>
@@ -58,7 +75,7 @@ const styles = StyleSheet.create({
 	outerContainer: {
 		backgroundColor: Colors.grey,
 		height: 500,
-		width: 350,
+		width: "100%",
 		borderRadius: 30,
 		alignItems: "center",
 		justifyContent: "center",
@@ -67,15 +84,15 @@ const styles = StyleSheet.create({
 	innerContainer: {
 		backgroundColor: Colors.white,
 		height: 450,
-		width: 300,
+		width: "100%",
 		borderRadius: 30,
 		alignItems: "center",
 	},
 	profile: {
 		flexDirection: "row",
-		width: "80%",
+		width: "90%",
 		paddingTop: 25,
-		paddingBottom: 25,
+		paddingBottom: 10,
 	},
 	profilePic: {
 		backgroundColor: Colors.grey,
@@ -93,9 +110,14 @@ const styles = StyleSheet.create({
 	postTime: {
 		paddingTop: 10,
 	},
+	postTitle: {
+		alignSelf: "flex-start",
+		paddingLeft: 25,
+		paddingBottom: 10,
+	},
 	image: {
 		height: 250,
-		width: 250,
+		width: "90%",
 		borderRadius: 30,
 		backgroundColor: Colors.orange,
 	},
@@ -108,13 +130,10 @@ const styles = StyleSheet.create({
 	},
 	reactLike: {},
 	reactComment: {
-		paddingLeft: 15,
+		paddingLeft: 20,
 	},
 	reactSend: {
-		paddingLeft: 15,
-	},
-	reactSave: {
-		paddingLeft: 95,
+		paddingLeft: 20,
 	},
 	info: {
 		width: "100%",

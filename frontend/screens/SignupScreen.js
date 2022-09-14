@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Text,
 	TouchableOpacity,
@@ -11,11 +11,26 @@ import { useNavigation } from "@react-navigation/native";
 
 function SignupScreen(props) {
 	const navigation = useNavigation();
+	const [username, setUsername] = useState();
+	const [password, setPassword] = useState();
+	const [confirmPassword, setConfirmPassword] = useState();
 	return (
 		<View style={styles.container}>
-			<TextInput style={styles.input} placeholder="Username" />
-			<TextInput style={styles.input} placeholder="Password" />
-			<TextInput style={styles.input} placeholder="Confirm password" />
+			<TextInput
+				onChangeText={(newText) => setUsername(newText)}
+				style={styles.input}
+				placeholder="Username"
+			/>
+			<TextInput
+				onChangeText={(newText) => setPassword(newText)}
+				style={styles.input}
+				placeholder="Password"
+			/>
+			<TextInput
+				onChangeText={(newText) => setConfirmPassword(newText)}
+				style={styles.input}
+				placeholder="Confirm password"
+			/>
 			<TouchableOpacity
 				onPress={() => navigation.replace("HomeScreen")}
 				style={styles.signupButton}>

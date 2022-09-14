@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 		height: 50,
 		width: 350,
 		paddingLeft: 20,
-		backgroundColor: Colors.grey,
+		backgroundColor: Colors.white,
 		justifyContent: "center",
 	},
 	commentUser: {

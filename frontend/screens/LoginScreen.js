@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Text,
 	TouchableOpacity,
@@ -11,10 +11,21 @@ import { useNavigation } from "@react-navigation/native";
 
 function LoginScreen(props) {
 	const navigation = useNavigation();
+	const [username, setUsername] = useState();
+	const [password, setPassword] = useState();
+
 	return (
 		<View style={styles.container}>
-			<TextInput style={styles.input} placeholder="Username" />
-			<TextInput style={styles.input} placeholder="Password" />
+			<TextInput
+				onChangeText={(newText) => setUsername(newText)}
+				style={styles.input}
+				placeholder="Username"
+			/>
+			<TextInput
+				onChangeText={(newText) => setPassword(newText)}
+				style={styles.input}
+				placeholder="Password"
+			/>
 			<TouchableOpacity
 				onPress={() => navigation.replace("HomeScreen")}
 				style={styles.loginButton}>
