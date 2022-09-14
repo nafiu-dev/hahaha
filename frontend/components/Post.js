@@ -46,7 +46,7 @@ function Post(props) {
 						/>
 					</TouchableOpacity>
 					<TouchableOpacity
-						onPress={() => navigation.replace("PostViewScreen")}>
+						onPress={() => navigation.replace("NewCommentScreen")}>
 						<AntDesign
 							name="message1"
 							size={32}

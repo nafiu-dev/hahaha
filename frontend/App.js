@@ -12,6 +12,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import MessageViewScreen from "./screens/MessageViewScreen";
 import PostViewScreen from "./screens/PostViewScreen";
 import SettingsScreen from "./screens/SettingsScreen";
+import NewCommentScreen from "./screens/NewCommentScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -73,6 +74,11 @@ export default function App() {
 					options={{ headerShown: false }}
 					name="SettingsScreen"
 					component={SettingsScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="NewCommentScreen"
+					component={NewCommentScreen}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

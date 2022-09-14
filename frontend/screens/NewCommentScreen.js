@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { View, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import {
+	View,
+	ScrollView,
+	StyleSheet,
+	TouchableOpacity,
+	TextInput,
+	Text,
+} from "react-native";
 import Colors from "../libraries/Colors";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
-import Comment from "../components/Comment";
 
 const test_post = {
 	UserName: "no id for now",
@@ -17,6 +23,7 @@ const test_post = {
 function PostViewScreen(props) {
 	const navigation = useNavigation();
 	const [liked, setAsLiked] = useState();
+	const [comment, setComment] = useState();
 
 	function like() {
 		test_post.liked = !test_post.liked;
@@ -36,27 +43,28 @@ function PostViewScreen(props) {
 					<TouchableOpacity onPress={like}>
 						<AntDesign name="heart" size={24} color={liked} />
 					</TouchableOpacity>
-					<TouchableOpacity
-						onPress={() => navigation.replace("NewCommentScreen")}>
+					<TouchableOpacity>
 						<AntDesign name="message1" size={24} color={Colors.black} />
 					</TouchableOpacity>
 					<TouchableOpacity>
 						<AntDesign name="arrowright" size={24} color={Colors.black} />
 					</TouchableOpacity>
 				</View>
-				<View style={styles.comments}>
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-				</View>
+				<TextInput
+					onChangeText={(newText) => setComment(newText)}
+					style={styles.comment}
+					placeholder="Comment"
+				/>
+				<TouchableOpacity
+					onPress={() => navigation.replace("PostViewScreen")}
+					style={styles.button}>
+					<Text style={styles.buttonText}>Post</Text>
+				</TouchableOpacity>
+				<TouchableOpacity
+					onPress={() => navigation.replace("PostViewScreen")}
+					style={styles.button}>
+					<Text style={styles.buttonText}>Cancel</Text>
+				</TouchableOpacity>
 			</View>
 		</ScrollView>
 	);
@@ -95,9 +103,27 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "space-around",
 	},
-	comments: {
-		width: "100%",
-		paddingTop: 5,
+	comment: {
+		width: "80%",
+		height: 50,
+		marginTop: 10,
+		alignSelf: "center",
+		backgroundColor: Colors.grey,
+		paddingLeft: 20,
+		borderRadius: 10,
+	},
+	button: {
+		height: 50,
+		width: "80%",
+		backgroundColor: Colors.orange,
+		borderRadius: 10,
+		marginTop: 10,
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	buttonText: {
+		fontWeight: "bold",
+		color: Colors.white,
 	},
 });
 
