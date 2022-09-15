@@ -8,18 +8,37 @@ import {
 } from "react-native";
 import Colors from "../libraries/Colors";
 import { useNavigation } from "@react-navigation/native";
+import { register } from "../libraries/AuthAPI";
 
 function SignupScreen(props) {
 	const navigation = useNavigation();
 	const [username, setUsername] = useState();
+	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
 	const [confirmPassword, setConfirmPassword] = useState();
+
+	function registerUser() {
+		let user = {
+			username: username,
+			email: email,
+			password: password,
+		};
+		if (password == confirmPassword && username != "" && email != "") {
+			register(user);
+		}
+	}
+
 	return (
 		<View style={styles.container}>
 			<TextInput
 				onChangeText={(newText) => setUsername(newText)}
 				style={styles.input}
 				placeholder="Username"
+			/>
+			<TextInput
+				onChangeText={(newText) => setEmail(newText)}
+				style={styles.input}
+				placeholder="Email"
 			/>
 			<TextInput
 				onChangeText={(newText) => setPassword(newText)}
@@ -31,9 +50,7 @@ function SignupScreen(props) {
 				style={styles.input}
 				placeholder="Confirm password"
 			/>
-			<TouchableOpacity
-				onPress={() => navigation.replace("HomeScreen")}
-				style={styles.signupButton}>
+			<TouchableOpacity onPress={registerUser} style={styles.signupButton}>
 				<Text style={styles.signupButtonText}>Sign up</Text>
 			</TouchableOpacity>
 			<TouchableOpacity

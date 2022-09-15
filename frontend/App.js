@@ -13,75 +13,78 @@ import MessageViewScreen from "./screens/MessageViewScreen";
 import PostViewScreen from "./screens/PostViewScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import NewCommentScreen from "./screens/NewCommentScreen";
+import { Context, ContextProvider } from "./libraries/Context";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
 	return (
-		<NavigationContainer>
-			<Stack.Navigator screenOptions={{ animation: "none" }}>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="WelcomeScreen"
-					component={WelcomeScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="LoginScreen"
-					component={LoginScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="SignupScreen"
-					component={SignupScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="HomeScreen"
-					component={HomeScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="MessageScreen"
-					component={MessageScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="PostScreen"
-					component={PostScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="ProfileScreen"
-					component={ProfileScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="ExploreScreen"
-					component={ExploreScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="MessageViewScreen"
-					component={MessageViewScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="PostViewScreen"
-					component={PostViewScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="SettingsScreen"
-					component={SettingsScreen}
-				/>
-				<Stack.Screen
-					options={{ headerShown: false }}
-					name="NewCommentScreen"
-					component={NewCommentScreen}
-				/>
-			</Stack.Navigator>
-		</NavigationContainer>
+		<ContextProvider>
+			<NavigationContainer>
+				<Stack.Navigator screenOptions={{ animation: "none" }}>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="WelcomeScreen"
+						component={WelcomeScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="LoginScreen"
+						component={LoginScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="SignupScreen"
+						component={SignupScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="HomeScreen"
+						component={HomeScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="MessageScreen"
+						component={MessageScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="PostScreen"
+						component={PostScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="ProfileScreen"
+						component={ProfileScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="ExploreScreen"
+						component={ExploreScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="MessageViewScreen"
+						component={MessageViewScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="PostViewScreen"
+						component={PostViewScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="SettingsScreen"
+						component={SettingsScreen}
+					/>
+					<Stack.Screen
+						options={{ headerShown: false }}
+						name="NewCommentScreen"
+						component={NewCommentScreen}
+					/>
+				</Stack.Navigator>
+			</NavigationContainer>
+		</ContextProvider>
 	);
 }
 

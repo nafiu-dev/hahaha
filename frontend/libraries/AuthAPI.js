@@ -7,6 +7,7 @@ export async function register(jsonObject) {
 	});
 
 	const Response = await response.json();
+	console.log(Response);
 	return Response;
 }
 
