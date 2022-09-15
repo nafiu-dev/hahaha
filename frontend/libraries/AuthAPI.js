@@ -34,7 +34,7 @@ export async function verify(jsonObject, auth) {
 	return Response;
 }
 
-export async function verify(file, auth) {
+export async function addProfile(file, auth) {
 	const url = "https://haha-api.herokuapp.com/api/v1/profile";
 	const response = await fetch(url, {
 		method: "PUT",
